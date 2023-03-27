@@ -1,0 +1,253 @@
+{
+    "grade": {
+      "id": null,
+      "name": "Standard VII",
+      "numeric_value": null,
+      "cohorts": null
+    },
+    "board": {
+      "id": null,
+      "name": "CBSE",
+      "cohorts": null
+    },
+    "subject": {
+      "id": null,
+      "name": "Mathematics",
+      "cohorts": null
+    },
+    "chapter": {
+      "id": null,
+      "chapter_id": 22461,
+      "name": "Rational Numbers",
+      "concept_relationships": null
+    },
+    "concepts": [
+      {
+        "concept_id": 8622,
+        "name": "Fractions",
+        "description": "numerator and denominator, fractions",
+        "chapter_relationships": [],
+        "predecessors": [],
+        "successors": [],
+        "root": [],
+        "cohort": []
+      },
+      {
+        "concept_id": 2448,
+        "name": "Numbers",
+        "description": "Memorizing already taught numbers, i.e. integers, whole numbers, natural numbers",
+        "chapter_relationships": [],
+        "predecessors": [],
+        "successors": [],
+        "root": [],
+        "cohort": []
+      },
+      {
+        "concept_id": 2449,
+        "name": null,
+        "description": null,
+        "chapter_relationships": [],
+        "predecessors": null,
+        "successors": [
+          {
+            "concept_id": 2450,
+            "name": null,
+            "description": null,
+            "chapter_relationships": [],
+            "predecessors": null,
+            "successors": null,
+            "root": null,
+            "cohort": null
+          },
+          {
+            "concept_id": 2451,
+            "name": null,
+            "description": null,
+            "chapter_relationships": [],
+            "predecessors": null,
+            "successors": null,
+            "root": null,
+            "cohort": null
+          },
+          {
+            "concept_id": 2452,
+            "name": null,
+            "description": null,
+            "chapter_relationships": [],
+            "predecessors": null,
+            "successors": null,
+            "root": null,
+            "cohort": null
+          },
+          {
+            "concept_id": 2453,
+            "name": null,
+            "description": null,
+            "chapter_relationships": [],
+            "predecessors": null,
+            "successors": null,
+            "root": null,
+            "cohort": null
+          },
+          {
+            "concept_id": 2454,
+            "name": null,
+            "description": null,
+            "chapter_relationships": [],
+            "predecessors": null,
+            "successors": null,
+            "root": null,
+            "cohort": null
+          },
+          {
+            "concept_id": 2455,
+            "name": null,
+            "description": null,
+            "chapter_relationships": [],
+            "predecessors": null,
+            "successors": null,
+            "root": null,
+            "cohort": null
+          },
+          {
+            "concept_id": 2456,
+            "name": null,
+            "description": null,
+            "chapter_relationships": [],
+            "predecessors": null,
+            "successors": [
+              {
+                "concept_id": 2458,
+                "name": null,
+                "description": null,
+                "chapter_relationships": [],
+                "predecessors": null,
+                "successors": [
+                  {
+                    "concept_id": 2459,
+                    "name": null,
+                    "description": null,
+                    "chapter_relationships": [],
+                    "predecessors": null,
+                    "successors": null,
+                    "root": null,
+                    "cohort": null
+                  }
+                ],
+                "root": null,
+                "cohort": null
+              }
+            ],
+            "root": null,
+            "cohort": null
+          },
+          {
+            "concept_id": 2460,
+            "name": null,
+            "description": null,
+            "chapter_relationships": [],
+            "predecessors": null,
+            "successors": null,
+            "root": null,
+            "cohort": null
+          },
+          {
+            "concept_id": 2461,
+            "name": null,
+            "description": null,
+            "chapter_relationships": [],
+            "predecessors": null,
+            "successors": [
+              {
+                "concept_id": 4181,
+                "name": null,
+                "description": null,
+                "chapter_relationships": [],
+                "predecessors": null,
+                "successors": null,
+                "root": null,
+                "cohort": null
+              },
+              {
+                "concept_id": 4182,
+                "name": null,
+                "description": null,
+                "chapter_relationships": [],
+                "predecessors": null,
+                "successors": null,
+                "root": null,
+                "cohort": null
+              },
+              {
+                "concept_id": 4183,
+                "name": null,
+                "description": null,
+                "chapter_relationships": [],
+                "predecessors": null,
+                "successors": null,
+                "root": null,
+                "cohort": null
+              },
+              {
+                "concept_id": 4184,
+                "name": null,
+                "description": null,
+                "chapter_relationships": [],
+                "predecessors": null,
+                "successors": null,
+                "root": null,
+                "cohort": null
+              }
+            ],
+            "root": null,
+            "cohort": null
+          }
+        ],
+        "root": null,
+        "cohort": null
+      },
+      {
+        "concept_id": 2457,
+        "name": null,
+        "description": null,
+        "chapter_relationships": [],
+        "predecessors": null,
+        "successors": [
+          {
+            "concept_id": 2456,
+            "name": null,
+            "description": null,
+            "chapter_relationships": [],
+            "predecessors": null,
+            "successors": [
+              {
+                "concept_id": 2458,
+                "name": null,
+                "description": null,
+                "chapter_relationships": [],
+                "predecessors": null,
+                "successors": [
+                  {
+                    "concept_id": 2459,
+                    "name": null,
+                    "description": null,
+                    "chapter_relationships": [],
+                    "predecessors": null,
+                    "successors": null,
+                    "root": null,
+                    "cohort": null
+                  }
+                ],
+                "root": null,
+                "cohort": null
+              }
+            ],
+            "root": null,
+            "cohort": null
+          }
+        ],
+        "root": null,
+        "cohort": null
+      }
+    ]
+  }
