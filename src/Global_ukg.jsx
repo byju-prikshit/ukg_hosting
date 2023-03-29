@@ -63,6 +63,7 @@ export default function Global_ukg() {
           apiData={apiData["raw_concept"]}
           nodeName="name"
           nodeDesc="description"
+          rawNodeGraph={true}
         />
       </div>
     );
