@@ -39,7 +39,7 @@ export default function Global_ukg() {
         { params: requestHeader }
       )
       .then((res) => {
-        console.log(res.data);
+        // console.log(res.data);
         if (isEmpty(res.data)) {
           alert("NO DATA CAME ERROR");
         } else setApiData(res.data);
