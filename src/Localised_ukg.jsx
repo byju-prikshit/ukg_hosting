@@ -1,6 +1,6 @@
 import React,{useEffect, useState} from 'react';
 import axios from 'axios';
-import { filter } from './functions';
+import { filter, isEmpty } from './utils/functions';
 import UniversalKnowledgeGraph from 'knowledge-graph-byjus/dist/components/UniversalKnowledgeGraph';
 
 function Localised_ukg() {
@@ -11,7 +11,7 @@ function Localised_ukg() {
 
   for(let i=0;i<data.length;i++)
   {
-    if(data[i]===null || data[i]===undefined)
+    if(isEmpty(data[i]))
     data[i]=""
   }
 
@@ -27,7 +27,7 @@ function Localised_ukg() {
     "add_predecessor": true
   }
 
-  console.log(requestHeader)
+  // console.log(requestHeader)
 
   useEffect(()=>{
   //   axios
@@ -39,8 +39,8 @@ function Localised_ukg() {
   // .catch((err) => console.log(err));
 
   axios.get(`https://ukg.prep.tllms.com/ukg/api/v1/knowledge_graph/${chapter_id}/`,{params:requestHeader}).then((res)=>{
-    console.log(res.data)
-    if(res.data===null || res.data===undefined) {
+    // console.log(res.data)
+    if(isEmpty(res.data)) {
         alert('NO DATA CAME ERROR');
     }
     else

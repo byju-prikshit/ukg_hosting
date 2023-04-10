@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import { filter } from "./functions";
+import { filter, isEmpty } from "./utils/functions";
 import UniversalKnowledgeGraph from "knowledge-graph-byjus/dist/components/UniversalKnowledgeGraph";
 import { Descriptions } from "antd";
 
@@ -11,7 +11,7 @@ export default function Global_ukg() {
   const data = [queryParameters.get("concept_id")];
 
   for (let i = 0; i < data.length; i++) {
-    if (data[i] === null || data[i] === undefined) data[i] = "";
+    if (isEmpty(data[i])) data[i] = "";
   }
 
   const concept_id = filter(data[0]);
@@ -22,7 +22,7 @@ export default function Global_ukg() {
     add_predecessor: true,
   };
 
-  console.log(requestHeader);
+  // console.log(requestHeader);
 
   useEffect(() => {
     //   axios
@@ -40,7 +40,7 @@ export default function Global_ukg() {
       )
       .then((res) => {
         console.log(res.data);
-        if (res.data === null || res.data === undefined) {
+        if (isEmpty(res.data)) {
           alert("NO DATA CAME ERROR");
         } else setApiData(res.data);
       })
