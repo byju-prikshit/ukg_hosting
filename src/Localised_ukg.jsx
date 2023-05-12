@@ -2,11 +2,13 @@ import React,{useEffect, useState} from 'react';
 import axios from 'axios';
 import { filter, isEmpty } from './utils/functions';
 import UniversalKnowledgeGraph from 'knowledge-graph-byjus/dist/components/UniversalKnowledgeGraph';
+import Refresh from './components/Refresh/Refresh';
 
-function Localised_ukg() {
+function Localised_ukg({loaderTrigger}) {
   const queryParameters = new URLSearchParams(window.location.search)
 
   const [apiData,setApiData]=useState(null)
+  const [refreshPage,setRefreshPage]=useState(false)
   const data=[queryParameters.get('chapter_id'),queryParameters.get('board'),queryParameters.get('grade'),queryParameters.get('subject')]
 
   for(let i=0;i<data.length;i++)
@@ -39,10 +41,13 @@ function Localised_ukg() {
   // .catch((err) => console.log(err));
 
   axios.get(`https://ukg.prep.tllms.com/ukg/api/v1/knowledge_graph/${chapter_id}/`,{params:requestHeader}).then((res)=>{
+    loaderTrigger(false)
     // console.log(res.data)
     if(isEmpty(res.data)) {
-        alert('NO DATA CAME ERROR');
+      setRefreshPage(true)
     }
+    else if(isEmpty(res.data.concepts))
+    alert('API had no nodes or edges')
     else
     setApiData(res.data.concepts)
   }).catch((err) => console.log(err));
@@ -53,9 +58,13 @@ function Localised_ukg() {
   }else if(apiData===null){
     return (<></>)
   }
+  else if(refreshPage)
+    return <Refresh/>
   else
   return (
+    <>
     <UniversalKnowledgeGraph apiData={apiData}/>
+    </>
   );
 }
 

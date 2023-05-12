@@ -3,11 +3,13 @@ import axios from "axios";
 import { filter, isEmpty } from "./utils/functions";
 import UniversalKnowledgeGraph from "knowledge-graph-byjus/dist/components/UniversalKnowledgeGraph";
 import { Descriptions } from "antd";
+import Refresh from "./components/Refresh/Refresh";
 
-export default function Global_ukg() {
+export default function Global_ukg({loaderTrigger}) {
   const queryParameters = new URLSearchParams(window.location.search);
 
   const [apiData, setApiData] = useState(null);
+  const [refreshPage,setRefreshPage]=useState(true)
   const data = [queryParameters.get("concept_id")];
 
   for (let i = 0; i < data.length; i++) {
@@ -39,10 +41,14 @@ export default function Global_ukg() {
         { params: requestHeader }
       )
       .then((res) => {
+        loaderTrigger(false)
         // console.log(res.data);
-        if (isEmpty(res.data)) {
-          alert("NO DATA CAME ERROR");
-        } else setApiData(res.data);
+        if (isEmpty(res.data) ) {
+          setRefreshPage(true)
+        }
+        else if(isEmpty(res.data["raw_concept"]))
+        alert('API had no nodes or edges')
+        else setApiData(res.data.raw_concept);
       })
       .catch((err) => console.log(err));
   }, []);
@@ -51,7 +57,10 @@ export default function Global_ukg() {
     return <div>No concept id given</div>;
   } else if(apiData===null){
     return (<></>)
-  }else
+  }
+  else if(refreshPage)
+  return <Refresh/>
+  else
     return (
       <div>
         <Descriptions bordered >
@@ -60,7 +69,7 @@ export default function Global_ukg() {
           <Descriptions.Item label="Description">{apiData["concept_description"]}</Descriptions.Item>
         </Descriptions>
         <UniversalKnowledgeGraph
-          apiData={apiData["raw_concept"]}
+          apiData={apiData}
           nodeName="name"
           nodeDesc="description"
           rawNodeGraph={true}
